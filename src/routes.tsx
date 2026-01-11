@@ -3,6 +3,7 @@ import { Home } from "./pages/homeKanary/home";
 import { Login } from "./pages/access/Login";
 import { RecoveryPass } from "./pages/access/RecoveryPass";
 import { Register } from "./pages/access/Register";
+import { Layout } from "./pages/app/Layout"
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
     {
         path: "/Kanary/recoverypass",
         Component: RecoveryPass,
+    },
+    {
+        path: "/Kanary/dashboard",
+        Component: Layout,
     }
     
 ])
