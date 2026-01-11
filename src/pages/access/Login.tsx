@@ -17,7 +17,7 @@ export function Login() {
   };
 
   return (
-    <div className="bg-cover bg-center h-screen bg-[url(src/assets/img/backgroundDARK.png)]">
+    <div className="bg-cover bg-center h-screen bg-[url(src/assets/img/backgroundDARK.avif)]">
       <section className="flex justify-center w-screen h-screen items-center">
         <div className=" w-[550px] h-[520px] bg-linear-to-t from-[#1A4C84]/50 via-[#2C82BD]/50 to-[#00102B]/50 backdrop-blur-sm rounded-[3rem] ring-1 ring-white/40 flex flex-col items-center">
           <div className="flex flex-col items-center h-full justify-center">
