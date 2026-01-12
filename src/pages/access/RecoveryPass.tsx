@@ -15,7 +15,7 @@ export const RecoveryPass = () => {
   };
 
   return (
-    <div className="bg-cover bg-center h-screen bg-[url(src/assets/img/backgroundDARK.avif)]">
+    <div className="bg-cover bg-center h-screen bg-[url(/src/assets/img/backgroundDARK.avif)]">
       <section className="flex justify-center w-screen h-screen items-center">
         <div className="w-[550px] h-[520px] bg-linear-to-t from-[#1A4C84]/50 via-[#2C82BD]/50 to-[#00102B]/50 backdrop-blur-sm rounded-[3rem] ring-1 ring-white/40 flex flex-col items-center shadow-x1/30">
           <SlArrowLeftCircle
@@ -28,8 +28,8 @@ export const RecoveryPass = () => {
               alt="logolight"
               className="w-[180px] h-[62px]"
             />
-            <div className="w-[100%] text-center flex flex-col">
-              <h1 className="font-bold text-2xl mb-2 text-white">
+            <div className="w-[100%] text-center flex flex-col pt-4">
+              <h1 className="font-bold text-2xl mb-2 text-white pb-2">
                 Recupere sua senha!
               </h1>
               <form action={handleFormSubmit} className="flex flex-col">
