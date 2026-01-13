@@ -1,12 +1,24 @@
-export const MenuHeader = () => (
-    <header className="flex p-4 mb-2.5 w-full"> 
-        <form className="w-full mr-5 flex items-center" action="">
-            <input className="w-full rounded-2xl h-8.75 pl-3.75 bg-white" type="search" name="search" placeholder="🔎" />
-        </form>
-        <div className="w-35.7 flex justify-evenly items-center text-6">
-            <a href="">🔔</a>
-            <a href="">❔</a>
-            <a href="">⚪</a>
-        </div>
-    </header>
-)
+import { FiHelpCircle, FiSearch } from "react-icons/fi";
+import { GrNotification } from "react-icons/gr";
+import { IoPersonCircleOutline } from "react-icons/io5";
+
+export const MenuHeader = () => {
+    return(
+        <header className="flex p-4 pb-7 pl-8 w-full h-25"> 
+            <form className="w-full pr-5 flex items-center" action="">
+                <input 
+                    className="relative w-full rounded-2xl h-9 pl-9 bg-white text-black" 
+                    type="search" 
+                    name="search"
+                    placeholder="Search" 
+                />
+                <span className="text-black absolute ml-3"><FiSearch /></span>
+            </form>
+            <div className="w-50 flex justify-evenly items-center text-6">
+                <GrNotification className="text-xl" />
+                <FiHelpCircle className="text-2xl" />
+                <IoPersonCircleOutline className="text-4xl" />
+            </div>
+        </header>
+    )
+}

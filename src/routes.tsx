@@ -8,7 +8,7 @@ import { Layout } from "./pages/app/Layout"
 export const router = createBrowserRouter([
     {
         path: "/",
-        Component: Home,
+        Component: Layout,
     },    
     {
         path: "/login",
