@@ -1,7 +1,8 @@
 import { SlArrowLeftCircle, SlEnvolope } from "react-icons/sl";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Input } from "../../components/ui/CustomInput";
+import { CustomButton } from "../../components/ui/CustomButton";
+import { CustomInputBox } from "../../components/ui/CustomInputBox";
 
 export const RecoveryPass = () => {
 
@@ -33,21 +34,16 @@ export const RecoveryPass = () => {
                 Recupere sua senha!
               </h1>
               <form action={handleFormSubmit} className="flex flex-col">
-                <Input
+                <CustomInputBox
                   type="Email"
                   name="email"
                   placeholder="Digite o seu e-mail"
-                  onchange={(e) =>
+                  onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  Icon={<SlEnvolope />}
+                  icon={<SlEnvolope />}
                 />
-                <button
-                  type="submit"
-                  className="bg-black text-white pt-1 pb-1 rounded-lg cursor-pointer hover:opacity-70"
-                >
-                  Recuperar
-                </button>
+                <CustomButton type="submit" children="Recuperar" />
               </form>
             </div>
           </div>

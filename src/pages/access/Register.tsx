@@ -1,8 +1,8 @@
 import { SlEnvolope, SlLock, SlUser, SlArrowLeftCircle } from "react-icons/sl";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Input } from "../../components/ui/CustomInput";
 import { CustomButton } from "../../components/ui/CustomButton";
+import { CustomInputBox } from "../../components/ui/CustomInputBox";
 
 
 export function Register() {
@@ -86,49 +86,49 @@ export function Register() {
               </p>
               <form action={handleFormSubmit} className="flex flex-col">
                 {/* div para input de usuario */}
-                <Input
+                <CustomInputBox
                   type="Text"
                   name="user"
                   placeholder="Nome de usuário"
-                  onchange={(e) =>
+                  onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  Icon={<SlUser />}
+                  icon={<SlUser />}
                 />
 
                 {/* div para input de email */}
-                <Input
+                <CustomInputBox
                   type="Email"
                   name="email"
                   placeholder="Email para cadastro"
-                  onchange={(e) =>
+                  onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  Icon={<SlEnvolope />}
+                  icon={<SlEnvolope />}
                 />
 
                 {/* div para input de senha */}
-                <Input
+                <CustomInputBox
                   type="Password"
                   name="password"
                   placeholder="Senha de cadastro"
-                  onchange={(e) =>
+                  onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
                   }
-                  Icon={<SlLock />}
+                  icon={<SlLock />}
                 />
 
                 {/* div para input da confirmação de senha */}
-                <Input
+                <CustomInputBox
                   type="Password"
                   name="confirmPassword"
                   placeholder="Confirme a password digitada"
-                  onchange={(e) =>
+                  onChange={(e) =>
                     setPass(e.target.value)
                   }
-                  Icon={<SlLock />}
+                  icon={<SlLock />}
                 />
-                <CustomButton children="Cadastrar usuário" />
+                <CustomButton type="submit" children="Cadastrar usuário" />
                 <p>{message}</p>
 
               </form>

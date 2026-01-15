@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { SlEnvolope, SlLock } from "react-icons/sl";
-
-import { Input } from "../../components/ui/CustomInput";
 import { CustomButton } from "../../components/ui/CustomButton";
 import { useNavigate } from "react-router";
+import { CustomInputBox } from "../../components/ui/CustomInputBox";
 
 export function Login() {
 
@@ -36,23 +35,23 @@ export function Login() {
                 Eficiência de graça!{" "}
               </p>
               <form action={handleFormSubmit} className="flex flex-col">
-                <Input
+                <CustomInputBox
                   type="Email"
                   name="email"
                   placeholder="E-mail"
-                  onchange={(e) =>
+                  onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  Icon={<SlEnvolope />}
+                  icon={<SlEnvolope />}
                 />
-                <Input
+                <CustomInputBox
                   type="Password"
                   name="password"
                   placeholder="Senha"
-                  onchange={(e) =>
+                  onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
                   }
-                  Icon={<SlLock />}
+                  icon={<SlLock />}
                 />
                 <p
                   onClick={() => navigate("../Kanary/recoverypass")}
@@ -60,7 +59,7 @@ export function Login() {
                 >
                   Esqueci minha senha
                 </p>
-                <CustomButton children="Login" />
+                <CustomButton type="submit" children="Login" />
               </form>
               <p
                 onClick={() => navigate("../Kanary/register")}

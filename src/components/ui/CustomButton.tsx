@@ -1,7 +1,7 @@
-export const CustomButton = ({ children, className, ...props }: React.ComponentProps<'button'>) => {
+export const CustomButton = ({ children, className, type, ...props }: React.ComponentProps<'button'>) => {
   return (
     <button
-      type="submit"
+      type={type}
       className="bg-black text-white rounded-lg h-[30px] cursor-pointer hover:opacity-70"
       {...props}
     >
