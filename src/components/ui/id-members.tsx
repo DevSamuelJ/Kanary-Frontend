@@ -9,7 +9,7 @@ type IdMembersProps = {
 
 export const IdMembers = ({name, profession, color}: IdMembersProps) => (
     <div className="flex items-center py-1">
-        <p className="text-6xl cursor-pointer pr-2 text-{txtColor}" style={{ color: color }}><IoPersonCircleOutline/></p>
+        <p className="text-6xl cursor-pointer pr-2" style={{ color: color }}><IoPersonCircleOutline/></p>
         <div className="w-full">
             <p>{name}</p>
             <p className="text-[12px] font-light">{profession}</p>

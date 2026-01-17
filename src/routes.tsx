@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router";
 import { Home } from "./pages/homeKanary/home";
-import { RecoveryPass } from "./pages/access/RecoveryPass";
-import { Register } from "./pages/access/Register";
-import { AppLayout } from "./pages/app/AppLayout"
-import { Dashboard } from "./pages/app/Dashboard";
-import { AccessLayout } from "./pages/access/AccessLayout";
+import { Register } from "./pages/access/register";
+import { AppLayout } from "./pages/app/app-layout"
+import { Dashboard } from "./pages/app/dashboard";
+import { AccessLayout } from "./pages/access/access-layout";
+import { Recover } from "./pages/access/recover";
 import { Login } from "./pages/access/Login";
 
 export const router = createBrowserRouter([
@@ -22,8 +22,8 @@ export const router = createBrowserRouter([
                 Component: Login,
             },
             {
-                path: "/access/recoverypass",
-                Component: RecoveryPass,
+                path: "/access/recover",
+                Component: Recover,
             },
             {
                 path: "/access/register",

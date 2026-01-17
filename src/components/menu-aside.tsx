@@ -1,5 +1,5 @@
 import { RxDashboard } from "react-icons/rx";
-import { AsideButton } from "./ui/AsideButtons";
+import { AsideButton } from "./ui/aside-buttons";
 import { LuAppWindow, LuLogOut } from "react-icons/lu";
 import { RiSettingsLine, RiTeamFill } from "react-icons/ri";
 import { PiFiles } from "react-icons/pi";

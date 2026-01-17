@@ -1,6 +1,6 @@
-import { DashboardCard } from "../../components/ui/DashboardCard";
-import { DashChart } from "../../components/ui/dashChart";
-import { IdMembers } from "../../components/ui/IdMembers";
+import { DashboardCard } from "../../components/ui/dashboard-card";
+import { DashChart } from "../../components/ui/dashboard-chart";
+import { IdMembers } from "../../components/ui/id-members";
 import { FiChevronDown, FiPlus } from "react-icons/fi";
 
 export const Dashboard = () => {

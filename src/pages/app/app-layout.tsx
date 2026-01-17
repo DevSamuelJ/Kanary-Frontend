@@ -1,5 +1,5 @@
-import { MenuAside } from "../../components/MenuAside";
-import { MenuHeader } from "../../components/MenuHeader";
+import { MenuAside } from "../../components/menu-aside";
+import { MenuHeader } from "../../components/menu-header";
 import { Outlet } from "react-router";
 
 export function AppLayout() {
