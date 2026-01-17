@@ -3,7 +3,7 @@ import { AsideButton } from "./ui/AsideButtons";
 import { LuAppWindow, LuLogOut } from "react-icons/lu";
 import { RiSettingsLine, RiTeamFill } from "react-icons/ri";
 import { PiFiles } from "react-icons/pi";
-import logoWhite from "../assets/img/logoKanaryWhiteBig.png"
+import logoWhite from "../assets/img/logoWhite.png"
 
 export const MenuAside = () => {
 

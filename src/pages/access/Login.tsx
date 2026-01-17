@@ -1,79 +1,79 @@
 import { useState } from "react";
+import { useNavigate } from "react-router"
+import { CustomInputBox } from "../../components/ui/CustomInputBox";
 import { SlEnvolope, SlLock } from "react-icons/sl";
 import { CustomButton } from "../../components/ui/CustomButton";
-import { useNavigate } from "react-router";
-import { CustomInputBox } from "../../components/ui/CustomInputBox";
 
-export function Login() {
+export const Login = () => {
+    // Hook para navegação.
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
+    // Hook para captar dados do formulário.
+    const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const [formData, setFormData] = useState({ email: "", password: "" });
-
-  const handleFormSubmit = () => {
-    console.log("envie essas informações para o servidor");
-    console.log(formData);
-  };
-
-  return (
-    <div className="bg-cover bg-center h-screen bg-[url(/src/assets/img/backgroundDARK.avif)]">
-      <section className="flex justify-center w-screen h-screen items-center">
-        <div className=" w-[550px] h-[520px] bg-linear-to-t from-[#1A4C84]/50 via-[#2C82BD]/50 to-[#00102B]/50 backdrop-blur-sm rounded-[3rem] ring-1 ring-white/40 flex flex-col items-center">
-          <div className="flex flex-col items-center h-full justify-center">
-            <img
-              src="/src/assets/img/logoKanaryWhiteSmall.png"
-              alt="logolight"
-              className="w-[180px] h-[62px]"
-            />
-            <div className="w-full text-center flex flex-col pt-4">
-              <h1 className="font-bold text-2xl text-white">
+    // Função para botão enviar do formulário.
+    const handleFormSubmit = () => {
+        console.log("Envie essas informações para o servidor.");
+        console.log(formData);
+    };
+    
+    return (
+        <section 
+            id="loginContainer"
+            className="w-95 md:w-135 h-135 bg-linear-to-t from-[#1A4C84]/50 via-[#2C82BD]/50 to-[#00102B]/50 backdrop-blur-sm rounded-[3rem] ring-1 ring-white/40 flex flex-col justify-center items-center"
+        >
+            <img src="/src/assets/img/logoWhite.png" alt="" className="w-50" />
+            <h1 className="font-bold p-4 text-2xl text-white">
                 Login com seu e-mail
-              </h1>
-              <p className="font-extralight text-base pb-5 text-white">
-                {" "}
-                Produtividade simples, equipes mais fortes. <br />{" "}
-                Eficiência de graça!{" "}
-              </p>
-              <form action={handleFormSubmit} className="flex flex-col">
+            </h1>
+            <p className="text-white font-extralight">
+                Produtividade simples, equipes mais fortes.
+            </p>
+            <p className="text-white">
+                Eficiência de graça!
+            </p>
+            <form 
+                action={handleFormSubmit}
+                className="flex flex-col py-5 px-5 w-full md:w-[70%]"
+            >
                 <CustomInputBox
-                  type="Email"
-                  name="email"
-                  placeholder="E-mail"
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  icon={<SlEnvolope />}
+                    type="Email"
+                    name="email"
+                    placeholder="E-mail"
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    icon={<SlEnvolope />}
                 />
                 <CustomInputBox
-                  type="Password"
-                  name="password"
-                  placeholder="Senha"
-                  onChange={(e) =>
-                    setFormData({ ...formData, password: e.target.value })
-                  }
-                  icon={<SlLock />}
+                    type="Password"
+                    name="password"
+                    placeholder="Senha"
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    icon={<SlLock />}
                 />
-                <p
-                  onClick={() => navigate("../Kanary/recoverypass")}
-                  className="text-xs font-thin self-end mb-3 mt-[-10px] hover:underline cursor-pointer text-white"
+                <p 
+                    className="text-white text-xs font-extralight -mt-2  pb-2 self-end hover:underline hover:cursor-pointer"
+                    onClick={ () => navigate("../access/recover") }
                 >
-                  Esqueci minha senha
+                    Esqueci minha senha
                 </p>
-                <CustomButton type="submit" children="Login" />
-              </form>
-              <p
-                onClick={() => navigate("../Kanary/register")}
-                className="text-xs font-thin self-center mt-2 text-white"
-              >
-                Ainda sem cadastro?{" "}
-                <span className="cursor-pointer hover:underline font-bold">
-                  Cadastre-se
-                </span>
-              </p>
+                <CustomButton 
+                    type="submit"
+                    children="Login"
+                    onClick={ () => navigate("./") }
+                />
+            </form>
+            <div className="flex">
+                <p className="font-extralight text-white text-xs">
+                    Ainda não tem cadastro?
+                </p>
+                <span 
+                    className="pl-1 font-semibold text-white text-xs hover:cursor-pointer hover:underline"
+                    onClick={ () => navigate("../register") }
+                >
+                    Cadastre-se!
+                </span>  
             </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+            
+        </section>
+    )
 }
