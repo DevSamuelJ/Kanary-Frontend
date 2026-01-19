@@ -5,12 +5,13 @@ import { AppLayout } from "./pages/app/app-layout"
 import { Dashboard } from "./pages/app/dashboard";
 import { AccessLayout } from "./pages/access/access-layout";
 import { Recover } from "./pages/access/recover";
-import { Login } from "./pages/access/Login";
+import { Login } from "./pages/access/login";
+import { FirstPage } from "./pages/first";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        Component: Home,
+        Component: FirstPage,
     },
     {
         path: "/access",
