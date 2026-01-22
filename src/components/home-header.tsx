@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router"
-import { HomeNav } from "./ui/home-nav"
+import { CustomBtn1 } from "./ui/custom-btn-1"
 import { VscClose, VscMenu } from "react-icons/vsc";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { CustomBtn2 } from "./ui/custom-btn-2";
 
 export const HomeHeader = () => {
 
@@ -21,7 +22,7 @@ export const HomeHeader = () => {
     ]
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-10 w-screen p-3">
+        <header className="fixed top-0 left-0 right-0 z-50 w-screen p-3">
            <nav
             id="homeHeaderContainer"
             className="w-full h-20 bg-slate-950/80 rounded-4xl px-6 py-3 z-10 flex justify-between items-center backdrop-blur-x"
@@ -35,14 +36,13 @@ export const HomeHeader = () => {
                     {menuButtons.map((btn, index) =>
                         /* Botão diferente para "Criar Conta" */ 
                         btn.label === "Criar Conta" ? 
-                        <HomeNav 
+                        <CustomBtn2
                             key={index} 
                             children={btn.label} 
-                            onClick={btn.onClick} 
-                            className="bg-gray-950 rounded-lg px-4 py-2 border border-blue-500 hover:bg-gray-800 cursor-pointer"
+                            onClick={btn.onClick}
                         /> :
                         /* Caso contrário, crie os botões padrões */
-                        <HomeNav 
+                        <CustomBtn1 
                             key={index} 
                             children={btn.label} 
                             onClick={btn.onClick} 
@@ -52,7 +52,7 @@ export const HomeHeader = () => {
 
                 {/* Botão Menu Mobile */}
                 <div className="md:hidden ">
-                    <HomeNav
+                    <CustomBtn1
                         // Ternário: se menu estiver aberto = botão "X" / se não = botão "menu" 
                         icon={isMenuOpen ? <VscClose className="text-xl" />  : <VscMenu className="text-xl" />}
                         className="bg-gray-950 rounded-lg px-4 py-2 border border-blue-500 hover:bg-gray-800 cursor-pointer"
@@ -79,13 +79,12 @@ export const HomeHeader = () => {
                                         transition={{ delay: index * 0.1 }}
                                         key={index} 
                                     >
-                                        <HomeNav
+                                        <CustomBtn2
                                             children={btn.label} 
                                             onClick={() => {
                                                 btn.onClick?.() 
                                                 setIsMenuOpen(false)}
                                             }
-                                            className="bg-gray-950 rounded-lg px-4 py-2 border border-blue-500 hover:bg-gray-800 cursor-pointer block"
                                         />
                                     </motion.div> :
                                     <motion.div
@@ -94,7 +93,7 @@ export const HomeHeader = () => {
                                         transition={{ delay: index * 0.1 }}
                                         key={index} 
                                     >
-                                        <HomeNav
+                                        <CustomBtn1
                                             children={btn.label} 
                                             onClick={() => {
                                                 btn.onClick?.() 

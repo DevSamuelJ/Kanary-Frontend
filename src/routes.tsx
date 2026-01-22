@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router";
-import { Home } from "./pages/homeKanary/home";
 import { Register } from "./pages/access/register";
 import { AppLayout } from "./pages/app/app-layout"
 import { Dashboard } from "./pages/app/dashboard";
