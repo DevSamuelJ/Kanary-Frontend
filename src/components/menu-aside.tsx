@@ -24,12 +24,12 @@ export const MenuAside = () => {
 
   return (
     <motion.aside 
-      animate={{ width: isMenuOpen ? 250 : 60 }}
+      animate={{ width: isMenuOpen ? 210 : 60 }}
       transition={{ duration: 0.2, ease: "easeInOut" }}
-      className="bg-[#0F0B15] text-white h-full flex flex-col justify-between mask-r-from-97%"
+      className="bg-[#0F0B15] text-white h-full flex flex-col shrink-0 justify-between mask-r-from-97%"
     >
       <CustomBtn1 
-        icon={ isMenuOpen ? <RiMenuUnfold3Line /> : <RiMenuUnfold4Line />} 
+        icon={ isMenuOpen ? <RiMenuUnfold4Line /> : <RiMenuUnfold3Line />} 
         className="w-10 border border-gray-700 mt-3 mr-3 self-end"
         onClick={ () => isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true) }
       />

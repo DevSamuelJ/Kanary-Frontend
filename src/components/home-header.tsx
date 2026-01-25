@@ -22,7 +22,7 @@ export const HomeHeader = () => {
     ]
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 w-screen p-3">
+        <header className="fixed top-0 left-0 right-0 z-50 w-full p-3">
            <nav
             id="homeHeaderContainer"
             className="w-full h-20 bg-slate-950/80 rounded-4xl px-6 py-3 z-10 flex justify-between items-center backdrop-blur-x"
