@@ -23,23 +23,27 @@ export const MenuAside = () => {
   ]
 
   return (
-    <motion.aside 
+    <motion.aside id="container"
       animate={{ width: isMenuOpen ? 210 : 60 }}
       transition={{ duration: 0.2, ease: "easeInOut" }}
       className="bg-[#0F0B15] text-white h-full flex flex-col shrink-0 justify-between mask-r-from-97%"
     >
+      {/* Botão retrátil */}
       <CustomBtn1 
         icon={ isMenuOpen ? <RiMenuUnfold4Line /> : <RiMenuUnfold3Line />} 
         className="w-10 border border-gray-700 mt-3 mr-3 self-end"
         onClick={ () => isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true) }
       />
+
+      {/* Logo Kanary */}
       <div className="flex justify-center items-center pb-10 pt-5 px-5">
         {isMenuOpen
           ? <img src={logoWhite} alt="Logo Kanary" className="w-35 h-12 pointer-fevents-none" />
           : <p className="text-3xl pt-2 pointer-events-none">K</p>
-        }
-        
+        }  
       </div>    
+
+      {/* Navegação */}
       <nav className="flex flex-col grow gap-5 items-center w-full">
         {menuBtns.map((btn) => (
           <AsideButton 
@@ -52,6 +56,8 @@ export const MenuAside = () => {
           />
         ))}
       </nav>
+
+      {/* Log Out */}
       <div className="flex items-center justify-center pb-10">
         <AsideButton
           children={isMenuOpen ? "Log Out" : ""} 

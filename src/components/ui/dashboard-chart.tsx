@@ -55,7 +55,7 @@ const data = [
 
 export function DashChart() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer className="w-full h-full">
       <LineChart
         data={data}
         margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
