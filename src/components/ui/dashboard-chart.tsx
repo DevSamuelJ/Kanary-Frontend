@@ -13,6 +13,7 @@ type Member = {
   color: string;
 };
 
+// Nome dos membros do time
 const members: Member[] = [
   { name: "Clark Griffin", color: "#00FFFF" },
   { name: "Octavia Blake", color: "#FF00FF" },

@@ -12,7 +12,7 @@ export const Dashboard = () => {
     ]
     
     return(
-        <div id="container" className="min-w-full h-full flex flex-col px-4 md:px-7 py-5 min-h-0">    
+        <div id="container" className="min-w-full h-full flex flex-col px-4 md:px-7 pb-5 md:pt-5 min-h-0">    
             <div id="title" className="flex items-center justify-between p-5 w-full">
                 <h1 className="text-3xl font-medium">Dashboard</h1>
                 <div className="flex items-center gap-2">

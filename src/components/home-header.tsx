@@ -5,6 +5,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { CustomBtn2 } from "./ui/custom-btn-2";
 
+// Menu no cabeçalho da página inicial
+
 export const HomeHeader = () => {
 
     // Hook para navegação
@@ -53,7 +55,7 @@ export const HomeHeader = () => {
                 {/* Botão Menu Mobile */}
                 <div className="md:hidden ">
                     <CustomBtn1
-                        // Ternário: se menu estiver aberto = botão "X" / se não = botão "menu" 
+                        // Ternário: se menu estiver aberto = botão "X" / se fechado = botão "menu" 
                         icon={isMenuOpen ? <VscClose className="text-xl" />  : <VscMenu className="text-xl" />}
                         className="bg-gray-950 rounded-lg px-4 py-2 border border-blue-500 hover:bg-gray-800 cursor-pointer"
                         onClick={ () => setIsMenuOpen(!isMenuOpen) }

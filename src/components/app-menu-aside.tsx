@@ -1,26 +1,19 @@
-import { RxDashboard } from "react-icons/rx";
 import { AsideButton } from "./ui/aside-buttons";
-import { LuAppWindow, LuLogOut } from "react-icons/lu";
-import { RiMenuUnfold3Line, RiMenuUnfold4Line, RiSettingsLine, RiTeamFill } from "react-icons/ri";
-import { PiFiles } from "react-icons/pi";
-import logoWhite from "../assets/img/logo-white.png"
+import { LuLogOut } from "react-icons/lu";
+import { RiMenuUnfold3Line, RiMenuUnfold4Line } from "react-icons/ri";
 import { useState } from "react";
 import { CustomBtn1 } from "./ui/custom-btn-1";
 import { motion } from "motion/react";
+import { menuBtns } from "./app-menu-btns";
 
+import logoWhite from "../assets/img/logo-white.png"
+
+// Menu principal lateral da aplicação
 export const MenuAside = () => {
 
   // Hook para retração/expansão do AsideMenu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
-  // Lista de botões do AsideMenu
-  const menuBtns = [
-    {"label": "Dashboard", "icon": <RxDashboard />},
-    {"label": "Board", "icon": <LuAppWindow />},
-    {"label": "Equipe", "icon": <RiTeamFill />},
-    {"label": "Projeto", "icon": <PiFiles />},
-    {"label": "Opções", "icon": <RiSettingsLine />},
-  ]
 
   return (
     <motion.aside id="container"
