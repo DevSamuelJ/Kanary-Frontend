@@ -6,6 +6,10 @@ import { AccessLayout } from "./pages/access/access-layout";
 import { Recover } from "./pages/access/recover";
 import { Login } from "./pages/access/login";
 import { FirstPage } from "./pages/first";
+import { Board } from "./pages/app/board";
+import { Equipe } from "./pages/app/team";
+import { Projeto } from "./pages/app/project";
+import { Opcoes } from "./pages/app/settings";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +42,22 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Dashboard,
+            },
+            {
+                path: "board",
+                Component: Board,
+            },
+            {
+                path: "equipe",
+                Component: Equipe,
+            },
+            {
+                path: "projeto",
+                Component: Projeto,
+            },
+            {
+                path: "opcoes",
+                Component: Opcoes,
             },
         ]
     },

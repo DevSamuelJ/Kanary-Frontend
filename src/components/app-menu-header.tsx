@@ -5,11 +5,15 @@ import logoWhite from "../assets/img/logo-white.png"
 import { CustomBtn1 } from "./ui/custom-btn-1"
 import { VscClose, VscMenu } from "react-icons/vsc"
 import { AnimatePresence, motion } from "motion/react"
+import { useNavigate } from "react-router"
 
 export const MenuHeader = () => {
     
-    //Hook para abrir/fechar menu
+    // Hook para abrir/fechar menu
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Hook para navegação
+    const navigate = useNavigate();
 
     return (
         <header className="md:hidden bg-[#0F0B15] h-14 flex items-center justify-between px-5 text-white">
@@ -38,7 +42,7 @@ export const MenuHeader = () => {
                                     <AsideButton
                                         children={btn.label}
                                         icon={btn.icon} 
-                                        onClick={ () => { setIsMenuOpen(false)} }
+                                        onClick={ () => {setIsMenuOpen(false); navigate(btn.route)} }
                                     />
                                 </motion.div>
                             )}

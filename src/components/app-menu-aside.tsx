@@ -7,13 +7,16 @@ import { motion } from "motion/react";
 import { menuBtns } from "./app-menu-btns";
 
 import logoWhite from "../assets/img/logo-white.png"
+import { useNavigate } from "react-router";
 
 // Menu principal lateral da aplicação
 export const MenuAside = () => {
 
   // Hook para retração/expansão do AsideMenu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
-
+  
+  // Hook para navegação
+  const navigate = useNavigate();
 
   return (
     <motion.aside id="container"
@@ -46,6 +49,7 @@ export const MenuAside = () => {
               className={isMenuOpen ? "pl-11" : "justify-center"}
               title={isMenuOpen ? undefined : btn.label}
               aria-label={btn.label}
+              onClick={() => navigate(btn.route)}
           />
         ))}
       </nav>
@@ -58,6 +62,7 @@ export const MenuAside = () => {
           className={isMenuOpen ? "pl-11" : "justify-center"}
           title="Log Out"
           aria-label="Log Out"
+          onClick={() => navigate("./login")}
         />
       </div>
     </motion.aside>
