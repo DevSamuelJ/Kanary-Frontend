@@ -4,7 +4,7 @@ export const Opcoes = () => {
             <div id="title" className="flex items-center justify-between p-5 w-full">
                 <h1 className="text-3xl font-medium">Opções</h1>
             </div>
-            <div id="content" className="bg-[#0F0B15] w-full flex flex-col flex-1 rounded-3xl py-5 px-2 min-h-0">              
+            <div id="content" className="bg-[#0F0B15] w-full flex flex-col flex-1 rounded-3xl py-5 px-2 min-h-0">             
             </div>
         </div>
     )

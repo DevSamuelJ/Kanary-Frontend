@@ -121,12 +121,12 @@ export const Register = () => {
             </div>
             
             {/* Botão de teste da API */}
-            <CustomButton
+            {/* <CustomButton
                 type="button"
                 className="w-full md:w-[70%] mt-2"
                 children="Debug da API"
                 onClick={ () => testeApi() }
-            />
+            /> */}
 
         </section>
     )

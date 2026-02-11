@@ -4,12 +4,12 @@ import { twMerge } from "tailwind-merge";
 type CustomInputType = React.ComponentProps<'input'> & {icon?: ReactNode};
 
 export const CustomInputBox = ({type, name, placeholder, icon, className, ...props}: CustomInputType) => (
-    <div className="relative bg-white opacity-50 rounded-lg mb-3">
+    <div className="relative rounded-lg mb-3">
         <input
-            type= {type}
+            type={type}
             name={name}
             placeholder={placeholder}
-            className={twMerge("border-white border-2 opacity-100 rounded-lg pl-8 pt-0.5 pb-0.5 w-full hover:border-black/30 hover:border-2", className)}
+            className={twMerge("bg-white/60 border-white/30 border-2 rounded-lg pl-8 pt-0.5 pb-0.5 w-full hover:border-black/30 hover:border-2", className)}
             {...props}
         />
         {icon && (
