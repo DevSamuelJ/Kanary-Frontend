@@ -12,7 +12,7 @@ export const MainHeader = () => {
                     className="relative w-full rounded-2xl h-9 pl-9 bg-white text-black" 
                     type="search" 
                     name="search"
-                    placeholder="Search" 
+                    placeholder="Busca" 
                 />
                 <span className="text-black absolute ml-3"><FiSearch /></span>
             </form>
