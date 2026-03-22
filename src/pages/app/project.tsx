@@ -53,9 +53,9 @@ export const Projeto = () => {
 
                 {/* Lista de Projetos */}
                 <h2 className="bg-[#110c1a] rounded-xl border border-white/70 p-2 pl-3 w-full mb-2.5 text-center mt-8"> Lista de projetos </h2>
-                <div className="w-full mb-3 place-items-center overflow-y-auto overflow-x-hidden simple-scroll">
+                <div className="w-full mb-3 overflow-y-auto overflow-x-hidden simple-scroll flex flex-col items-center">
                     {projects.map((project) =>
-                            <ProjectCard key={project.id} id={project.id} name={project.name} description={project.description} />
+                        <ProjectCard key={project.id} id={project.id} name={project.name} description={project.description} />
                     )}   
                 </div>  
 
