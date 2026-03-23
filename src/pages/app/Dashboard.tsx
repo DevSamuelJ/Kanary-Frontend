@@ -2,6 +2,7 @@ import { DashboardCard } from "../../components/ui/dashboard-card";
 import { DashChart } from "../../components/ui/dashboard-chart";
 import { IdMembers } from "../../components/ui/id-members";
 import { FiChevronDown, FiPlus } from "react-icons/fi";
+import { listProjects } from "../../components/ui/list-projects";
 
 export const Dashboard = () => {
 
@@ -12,7 +13,7 @@ export const Dashboard = () => {
     ]
     
     return(
-        <div id="container" className="min-w-full h-full flex flex-col px-4 md:px-7 pb-5 md:pt-5 min-h-0">    
+        <div id="container" className="min-w-full flex flex-col flex-1 px-4 md:px-7 pb-5 md:pt-5 min-h-0 overflow-hidden">    
             <div id="title" className="flex items-center justify-between p-5 w-full">
                 <h1 className="text-3xl font-medium">Dashboard</h1>
                 <div className="flex items-center gap-2">
@@ -21,19 +22,23 @@ export const Dashboard = () => {
                 </div>
             </div>
             <div id="content" className="bg-[#0F0B15] w-full flex flex-col flex-1 rounded-3xl py-5 px-2 min-h-0">
-                <div className="pl-4 flex items-center gap-2">
-                    <h4>Projeto Festival Fashion</h4>
-                    <FiChevronDown />
+                <div id="project-name" className="px-4 pb-4 flex items-center gap-2">
+                    <h1 className="text-xl font-bold pr-1">Projeto:</h1>
+                    <select name="projects" id="projects" className="w-full bg-[#110c1a] py-1 px-2 border-1 border-white rounded-xl outline-none cursor-pointer">
+                        {listProjects.map((project) => 
+                            <option value={project.id} className="bg-[#110c1a]">{project.name}</option>
+                        )}
+                    </select>
                 </div>
-                <section id="project-content" className="flex-1 overflow-y-auto simple-scroll">
-                    <div className="gap-5 w-full p-4 grid grid-cols-2 lg:grid-cols-4">
-                        <DashboardCard title="Total" qtde={68}/>
-                        <DashboardCard title="Finalizado" qtde={42}/>
-                        <DashboardCard title="Em andamento" qtde={8}/>
-                        <DashboardCard title="Pendente" qtde={18}/>
+                <section id="project-content" className="flex flex-col flex-1 overflow-y-auto simple-scroll min-h-0">
+                    <div className="gap-5 w-full p-4 grid grid-cols-2 lg:grid-cols-4 flex-1">
+                        <DashboardCard title="Total" qtde={68} />
+                        <DashboardCard title="Finalizado" qtde={42} />
+                        <DashboardCard title="Em andamento" qtde={8} />
+                        <DashboardCard title="Pendente" qtde={18} />
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_1.3fr] xl:grid-cols-[2fr_1fr] p-4 gap-8">
-                        <div className="flex flex-col min-h-100">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_1.3fr] xl:grid-cols-[2fr_1fr] p-4 gap-8 flex-3">
+                        <div className="flex flex-col flex-1 min-h-100 lg:min-h-0">
                             <h2 className="bg-[#110c1a] rounded-xl border border-white/70 p-2 pl-3 w-full mb-2.5">
                                 Progresso do Projeto
                             </h2>
@@ -45,7 +50,7 @@ export const Dashboard = () => {
                                 <h4>Membros de Time</h4>
                                 <FiPlus />
                             </div>
-                            <div className="grow">
+                            <div className="flex-1 overflow-y-auto pr-2">
                                 {members.map(
                                     (member, index) => (<IdMembers key={index} name={member.name} profession={member.profession} color={member.color} />)
                                 )}

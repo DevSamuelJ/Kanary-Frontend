@@ -22,7 +22,7 @@ export function AppLayout() {
         {/* Busca, notificação, ajuda e perfil */}
         <MainHeader />
 
-        <section className="flex flex-1 overflow-hidden min-h-0">
+        <section className="flex flex-col flex-1 overflow-hidden min-h-0">
           {/* Componente para trocar páginas dentro do app */}
           <Outlet /> 
         </section>

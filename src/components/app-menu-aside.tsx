@@ -4,7 +4,7 @@ import { RiMenuUnfold3Line, RiMenuUnfold4Line } from "react-icons/ri";
 import { useState } from "react";
 import { CustomBtn1 } from "./ui/custom-btn-1";
 import { motion } from "motion/react";
-import { menuBtns } from "./app-menu-btns";
+import { listMenuBtns } from "./app-list-menu-btns";
 
 import logoWhite from "../assets/img/logo-white.png"
 import { useNavigate } from "react-router";
@@ -41,7 +41,7 @@ export const MenuAside = () => {
 
       {/* Navegação */}
       <nav className="flex flex-col grow gap-5 items-center w-full">
-        {menuBtns.map((btn) => (
+        {listMenuBtns.map((btn) => (
           <AsideButton 
               key={btn.label} 
               children={isMenuOpen ? btn.label : undefined} 

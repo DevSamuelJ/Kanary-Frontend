@@ -4,17 +4,9 @@ import { CustomInputBox } from "../../components/ui/custom-input-box"
 import { ProjectCard } from "../../components/ui/project-card"
 import { GrAddCircle } from "react-icons/gr"
 import { MdAssignmentAdd } from "react-icons/md"
+import { listProjects } from "../../components/ui/list-projects"
 
 export const Projeto = () => {
-
-    const projects = [
-        {"id": 1, "name": "Projeto 1", "description": "Descrição 1"},
-        {"id": 2, "name": "Projeto 2", "description": "Descrição 2"},
-        {"id": 3, "name": "Projeto 3", "description": "Descrição 3"},
-        {"id": 4, "name": "Projeto 4", "description": "Descrição 4"},
-        {"id": 5, "name": "Projeto 5", "description": "Descrição 5"},
-        {"id": 6, "name": "Projeto 6", "description": "Descrição 6"},
-    ]
 
     return (
         <div id="container" className="min-w-full h-full flex flex-col px-4 md:px-7 pb-5 md:pt-5 min-h-0">    
@@ -25,7 +17,7 @@ export const Projeto = () => {
             <div id="content" className="bg-[#0F0B15] w-full flex flex-col flex-1 items-center rounded-3xl py-5 px-5 min-h-0">
                 
                 {/* Formulário */}
-                <div className="w-full md:w-150 flex flex-col items-center">
+                <div className="w-full md:w-150 flex flex-col flex-1 items-center">
                     <div className="flex w-full pl-5 items-center pb-3">
                         <MdAssignmentAdd className="text-2xl" />
                         <h2 className="p-2 pl-3 text-lg"> Criar projeto </h2>
@@ -53,8 +45,8 @@ export const Projeto = () => {
 
                 {/* Lista de Projetos */}
                 <h2 className="bg-[#110c1a] rounded-xl border border-white/70 p-2 pl-3 w-full mb-2.5 text-center mt-8"> Lista de projetos </h2>
-                <div className="w-full mb-3 overflow-y-auto overflow-x-hidden simple-scroll flex flex-col items-center">
-                    {projects.map((project) =>
+                <div className="w-full overflow-y-auto overflow-x-hidden simple-scroll grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-3 flex-2">
+                    {listProjects.map((project) =>
                         <ProjectCard key={project.id} id={project.id} name={project.name} description={project.description} />
                     )}   
                 </div>  

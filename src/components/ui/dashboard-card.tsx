@@ -11,6 +11,6 @@ export const DashboardCard = ({title, qtde}:DashboardCardProps) => (
             <p className="text-xs">{title}</p>
             <BsArrowUpRightCircle className="text-xl"/>
         </div>
-        <p className="pl-2 pt-2 font-medium text-5xl xl:text-7xl 2xl:text-8xl">{qtde}</p>
+        <p className="pl-2 pt-2 font-medium text-5xl lg:text-7xl xl:text-7xl 2xl:text-8xl">{qtde}</p>
     </div>
 );

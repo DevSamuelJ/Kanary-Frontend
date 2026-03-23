@@ -4,7 +4,7 @@ import { RiSettingsLine, RiTeamFill } from "react-icons/ri";
 import { RxDashboard } from "react-icons/rx";
 
 // Botões do menu principal lateral (desktop) ou do cabeçalho (mobile)
-export const menuBtns = [
+export const listMenuBtns = [
     {"label": "Dashboard", "icon": <RxDashboard />, "route": "../app" },
     {"label": "Board", "icon": <LuAppWindow />, "route": "board"},
     {"label": "Equipe", "icon": <RiTeamFill />, "route": "equipe"},

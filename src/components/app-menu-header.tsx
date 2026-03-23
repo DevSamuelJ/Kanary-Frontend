@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { menuBtns } from "./app-menu-btns"
+import { listMenuBtns } from "./app-list-menu-btns"
 import { AsideButton } from "./ui/aside-buttons"
 import logoWhite from "../assets/img/logo-white.png"
 import { CustomBtn1 } from "./ui/custom-btn-1"
@@ -32,7 +32,7 @@ export const MenuHeader = () => {
                         className="md:hidden overflow-hidden absolute bg-[#0F0B15] border border-blue-900 border-t-0 right-5 top-12 p-5 z-50"
                     >
                         <div className="pb-2 space-y-3">
-                            {menuBtns.map( (btn, index) => 
+                            {listMenuBtns.map( (btn, index) => 
                                 <motion.div
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}

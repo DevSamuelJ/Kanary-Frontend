@@ -8,7 +8,7 @@ export const Board = () => {
             <div id="boardTitle" className="flex items-center justify-between p-5 w-full">
                 <h1 className="text-3xl font-medium">Board</h1>
             </div>
-            <div id="boardContent" className="w-full flex-1 min-h-0 grid lg:grid-cols-2 xl:grid-cols-3 gap-5 py-5 px-2">
+            <div id="boardContent" className="w-full flex-1 min-h-0 grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
 
                 {/* A Fazer */}
                 <section id="toDoContainer" className="bg-[#0F0B15] py-5 px-5 rounded-2xl flex flex-col min-h-0">
