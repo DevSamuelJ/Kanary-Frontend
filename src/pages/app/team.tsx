@@ -4,7 +4,24 @@ export const Equipe = () => {
             <div id="title" className="flex items-center justify-between p-5 w-full">
                 <h1 className="text-3xl font-medium">Equipe</h1>
             </div>
-            <div id="content" className="bg-[#0F0B15] w-full flex flex-col flex-1 rounded-3xl py-5 px-5 min-h-0">              
+            <div id="content" className="bg-[#0F0B15] w-full grid grid-cols-1 lg:grid-cols-2 flex-1 rounded-3xl py-5 px-5 min-h-0">   
+
+                <div className="bg-amber-400">
+                    
+                </div>
+
+                <div className="bg-red-400">
+
+                </div>
+
+                <div className="bg-blue-400">
+
+                </div>
+
+                <div className="bg-green-400">
+
+                </div>
+                           
             </div>
         </div>
     )

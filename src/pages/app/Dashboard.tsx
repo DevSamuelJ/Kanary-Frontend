@@ -1,17 +1,12 @@
 import { DashboardCard } from "../../components/ui/dashboard-card";
 import { DashChart } from "../../components/ui/dashboard-chart";
-import { IdMembers } from "../../components/ui/id-members";
+import { MembersCard } from "../../components/ui/members-card";
 import { FiChevronDown, FiPlus } from "react-icons/fi";
 import { listProjects } from "../../components/ui/list-projects";
+import { listMembers } from "../../components/ui/list-members";
 
 export const Dashboard = () => {
 
-    const members = [
-        {"name": "Clark Griffin", "profession": "Ul Designer", "color": "#00FFFF", "tasksCompleted": 17},
-        {"name": "Octavia Blake", "profession": "Copywriter", "color": "#FF00FF", "tasksCompleted": 13},
-        {"name": "Rufus Kafu", "profession": "UX Researcher", "color": "#FFFF00", "tasksCompleted": 12},
-    ]
-    
     return(
         <div id="container" className="min-w-full flex flex-col flex-1 px-4 md:px-7 pb-5 md:pt-5 min-h-0 overflow-hidden">    
             <div id="title" className="flex items-center justify-between p-5 w-full">
@@ -51,8 +46,8 @@ export const Dashboard = () => {
                                 <FiPlus />
                             </div>
                             <div className="flex-1 overflow-y-auto pr-2">
-                                {members.map(
-                                    (member, index) => (<IdMembers key={index} name={member.name} profession={member.profession} color={member.color} />)
+                                {listMembers.map(
+                                    (member, index) => (<MembersCard key={index} name={member.name} profession={member.profession} color={member.color} />)
                                 )}
                             </div>                    
                             <div className="self-end">
