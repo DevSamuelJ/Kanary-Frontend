@@ -1,5 +1,3 @@
-// Lista de projetos
-
 export const listProjects = [
     {"id": 1, "name": "Projeto 1", "description": "Descrição 1"},
     {"id": 2, "name": "Projeto 2", "description": "Descrição 2"},

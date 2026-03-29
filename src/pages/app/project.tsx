@@ -4,7 +4,7 @@ import { CustomInputBox } from "../../components/ui/custom-input-box"
 import { ProjectCard } from "../../components/ui/project-card"
 import { GrAddCircle } from "react-icons/gr"
 import { MdAssignmentAdd } from "react-icons/md"
-import { listProjects } from "../../components/ui/list-projects"
+import { listProjects } from "../../components/data/list-projects"
 
 export const Projeto = () => {
 

@@ -2,8 +2,8 @@ import { DashboardCard } from "../../components/ui/dashboard-card";
 import { DashChart } from "../../components/ui/dashboard-chart";
 import { MembersCard } from "../../components/ui/members-card";
 import { FiChevronDown, FiPlus } from "react-icons/fi";
-import { listProjects } from "../../components/ui/list-projects";
-import { listMembers } from "../../components/ui/list-members";
+import { listProjects } from "../../components/data/list-projects";
+import { listMembers } from "../../components/data/list-members";
 
 export const Dashboard = () => {
 
@@ -47,7 +47,7 @@ export const Dashboard = () => {
                             </div>
                             <div className="flex-1 overflow-y-auto pr-2">
                                 {listMembers.map(
-                                    (member, index) => (<MembersCard key={index} name={member.name} profession={member.profession} color={member.color} />)
+                                    (member, index) => (<MembersCard key={index} name={member.name} role={member.role} color={member.color} />)
                                 )}
                             </div>                    
                             <div className="self-end">
