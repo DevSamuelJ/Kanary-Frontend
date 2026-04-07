@@ -11,15 +11,7 @@ export const FirstPage = () => {
                 className="fixed w-full min-h-full bg-[url(/src/assets/img/bg-home.jpg)] bg-cover bg-no-repeat pointer-events-none z-0 inset-0" />
 
             {/* Header */}
-            <HomeHeader />
-
-            {/* Moon */}
-            <motion.div id="moon"
-                className="absolute w-40 h-40 md:w-75 md:h-75 bg-[url(/src/assets/img/moon.png)] bg-contain bg-no-repeat top-30 right-5 md:right-10 mask-radial-at-top-left mask-radial-from-50% pointer-events-none z-1" />
-
-            {/* Comet */}
-            <motion.div id="comet" 
-                className="absolute w-5 h-5 md:w-10 md:h-10 bg-[url(/src/assets/img/comet.png)] bg-contain bg-no-repeat top-0 right-0 pointer-events-none z-2" />
+            <HomeHeader />            
 
             <section className="relative w-screen h-screen">
                 <div className="z-10 pl-10 lg:pl-20 xl:pl-30 md:w-100 lg:w-130 xl:w-140 2xl:w-180 md:pt-55 lg:pt-40 2xl:pt-40 text-white">

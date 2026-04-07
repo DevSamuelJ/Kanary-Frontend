@@ -5,16 +5,16 @@ import { Dashboard } from "./pages/app/dashboard";
 import { AccessLayout } from "./pages/access/access-layout";
 import { Recover } from "./pages/access/recover";
 import { Login } from "./pages/access/login";
-import { FirstPage } from "./pages/first";
 import { Board } from "./pages/app/board";
 import { Equipe } from "./pages/app/team";
 import { Projeto } from "./pages/app/project";
 import { Opcoes } from "./pages/app/settings";
+import { Home } from "./pages/homeKanary/home";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        Component: FirstPage,
+        Component: Home,
     },
     {
         path: "/access",
