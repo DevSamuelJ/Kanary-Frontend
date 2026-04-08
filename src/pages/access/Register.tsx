@@ -1,142 +1,133 @@
-import { SlEnvolope, SlLock, SlUser, SlArrowLeftCircle } from "react-icons/sl";
 import { useState } from "react";
+import { SlEnvolope, SlLock, SlUser } from "react-icons/sl";
 import { useNavigate } from "react-router";
-import { Input } from "../../components/ui/CustomInput";
-import { CustomButton } from "../../components/ui/CustomButton";
+import { CustomInputBox } from "../../components/ui/custom-input-box";
+import { CustomButton } from "../../components/ui/custom-btn";
 
+export const Register = () => {
 
-export function Register() {
+    // Hook para navegação.
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
-  const [message, setMessage] = useState("")
+    // Hook para mensagem de erro
+    const [message, setMessage] = useState("");
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    role: "CONTRIBUTOR"
-  });
+    // Hook para extrair dados do formulário
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        password: "",
+        role: "CONTRIBUTOR",
+    });
 
-  const [confirmPass, setPass] = useState("")
+    // Hook para confirmar a senha criada
+    const [checkPass, setCheckPass] = useState("");
 
+    // Função para botão Cadastrar do formulário
+    const handleRegister = async () => {
+        
+        // Testando se a senha criada é a mesma inserida no campo de confirmação
+        if (formData.password === checkPass) {
 
-  // const handleFormSubmit = () => {
-  //   console.log("envie essas informações para o servidor");
-  //   console.log(formData);
-  // };
+            // Manipulando a API através do POST para cadastrar usuário
+            const url = "https://kanarybackend.discloud.app/usuarios";
+            await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+            })
+            setMessage("Logando...")
+            console.log(formData)
 
-    const handleFormSubmit = async () => {
-    console.log("envie essas informações para o servidor");
+        } else {
 
+            setMessage("As senhas não coincidem, tente novamente.");
+            console.log(message);
 
-    if (formData.password === confirmPass){
+        };
 
+    };
+
+    // Função para teste da API
+    const testeApi = async () => {
         const url = "https://kanarybackend.discloud.app/usuarios";
-        await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData)
-        })
-        setMessage("Logando...")
-        console.log(formData)
-
-    }else{
-      setMessage("A senhas não coincidem, tente novamente.")
-
+        await fetch(url)
+        .then(promisse => promisse.json())
+        .then(data => data.map((usuario:string)=>(console.log(usuario))))
     }
-  }
-
-
-    const testeApi = async() =>{
-    const url = "https://kanarybackend.discloud.app/usuarios";
-    await fetch(url)
-    .then(promisse => promisse.json())
-    .then(data => data.map((usuario:string)=>(console.log(usuario))))
-    }
-
-
-
-
-
-
-
-
-  return (
-    <div className="bg-cover bg-center h-screen bg-[url(src/assets/img/backgroundDARK.avif)]">
-      <section className="flex justify-center w-screen h-screen items-center">
-        <div className=" w-[550px] h-[520px] bg-linear-to-t from-[#1A4C84]/50 via-[#2C82BD]/50 to-[#00102B]/50 backdrop-blur-sm rounded-[3rem] ring-1 ring-white/40 flex flex-col items-center shadow-x1/30">
-          <SlArrowLeftCircle
-            className="text-white/50 size-7 mt-8 ml-8 self-start hover:text-white hover:cursor-pointer"
-            onClick={() => navigate("../Kanary/login")}
-          />
-          <div className="flex flex-col items-center h-[calc(100%-120px)] justify-center">
-            <img
-              src="/src/assets/img/logoKanaryWhiteSmall.png"
-              alt="logolight"
-              className="w-[180px] h-[62px]"
-            />
-            <div className="w-[100%] text-center flex flex-col">
-              <h1 className="font-bold text-2xl text-white">
-                Cadastre o seu usuario!
-              </h1>
-              <p className="font-thin text-base mb-5 text-white">
+    
+    return (
+        <section 
+            id="registerContainer"
+            className="w-95 md:w-135 h-135 bg-linear-to-t from-[#1A4C84]/50 via-[#2C82BD]/50 to-[#00102B]/50 backdrop-blur-sm rounded-[3rem] ring-1 ring-white/40 flex flex-col justify-center items-center px-5"
+        >
+            <img src="/src/assets/img/logo-white.png" alt="" className="w-50" />
+            <h1 className="font-bold p-4 text-2xl text-white">
+                Cadastre seu usuário
+            </h1>
+            <p className="text-white font-extralight w-full md:w-[70%] text-center">
                 Entre e seja mais um entre nossos mais de <b>mil</b> usuários.
-              </p>
-              <form action={handleFormSubmit} className="flex flex-col">
-                {/* div para input de usuario */}
-                <Input
-                  type="Text"
-                  name="user"
-                  placeholder="Nome de usuário"
-                  onchange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  Icon={<SlUser />}
+            </p>
+            <form 
+                action={handleRegister}
+                className="flex flex-col py-5 w-full md:w-[70%]"
+            >
+                <CustomInputBox
+                    type="Text"
+                    name="user"
+                    placeholder="Nome de usuário"
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    icon={<SlUser />}
                 />
-
-                {/* div para input de email */}
-                <Input
-                  type="Email"
-                  name="email"
-                  placeholder="Email para cadastro"
-                  onchange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  Icon={<SlEnvolope />}
+                <CustomInputBox
+                    type="Email"
+                    name="email"
+                    placeholder="Email para cadastro"
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    icon={<SlEnvolope />}
                 />
-
-                {/* div para input de senha */}
-                <Input
-                  type="Password"
-                  name="password"
-                  placeholder="Senha de cadastro"
-                  onchange={(e) =>
-                    setFormData({ ...formData, password: e.target.value })
-                  }
-                  Icon={<SlLock />}
+                <CustomInputBox
+                    type="Password"
+                    name="password"
+                    placeholder="Senha de cadastro"
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    icon={<SlLock />}
                 />
-
-                {/* div para input da confirmação de senha */}
-                <Input
-                  type="Password"
-                  name="confirmPassword"
-                  placeholder="Confirme a password digitada"
-                  onchange={(e) =>
-                    setPass(e.target.value)
-                  }
-                  Icon={<SlLock />}
+                <CustomInputBox
+                    type="Password"
+                    name="confirmPassword"
+                    placeholder="Confirme a senha digitada"
+                    onChange={(e) => setCheckPass(e.target.value)}
+                    icon={<SlLock />}
                 />
-                <CustomButton children="Cadastrar usuário" />
-                <p>{message}</p>
-
-              </form>
-                <p>Botão de debug da api:</p> <button onClick={()=>{testeApi()}} className="cursor-pointer" >Teste api</button>
+                <CustomButton 
+                    type="submit"
+                    children="Cadastrar"
+                    onClick={ () => navigate("./") }
+                />
+            </form>
+            <div className="flex">
+                <p className="font-extralight text-white text-xs">
+                    Ja possui cadastro?
+                </p>
+                <span 
+                    className="pl-1 font-semibold text-white text-xs hover:cursor-pointer hover:underline"
+                    onClick={ () => navigate("../login") }
+                >
+                    Faça seu Login!
+                </span>  
             </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+            
+            {/* Botão de teste da API */}
+            {/* <CustomButton
+                type="button"
+                className="w-full md:w-[70%] mt-2"
+                children="Debug da API"
+                onClick={ () => testeApi() }
+            /> */}
+
+        </section>
+    )
 }
