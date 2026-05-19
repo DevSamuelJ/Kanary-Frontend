@@ -13,7 +13,21 @@ export const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
 
     // Função para botão LOGIN do formulário.
-    const handleFormSubmit = () => {
+    const handleFormSubmit = async() => {
+
+        const url = "http://localhost:8080/usuarios/login";
+        await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+            })
+
+
+
+
+
         console.log("Envie essas informações para o servidor.");
         console.log(formData);
     };
@@ -60,7 +74,7 @@ export const Login = () => {
                 <CustomButton 
                     type="submit"
                     children="Login"
-                    onClick={ () => navigate("./") }
+                    onClick={ () => navigate("./app") }
                 />
             </form>
             <div className="flex">
