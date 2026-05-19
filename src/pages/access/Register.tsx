@@ -30,7 +30,7 @@ export const Register = () => {
         if (formData.password === checkPass) {
 
             // Manipulando a API através do POST para cadastrar usuário
-            const url = "https://kanarybackend.discloud.app/usuarios";
+            const url = "http://localhost:8080/usuarios";
             await fetch(url, {
             method: "POST",
             headers: {
@@ -50,13 +50,13 @@ export const Register = () => {
 
     };
 
-    // Função para teste da API
-    const testeApi = async () => {
-        const url = "https://kanarybackend.discloud.app/usuarios";
-        await fetch(url)
-        .then(promisse => promisse.json())
-        .then(data => data.map((usuario:string)=>(console.log(usuario))))
-    }
+    // // Função para teste da API
+    // const testeApi = async () => {
+    //     const url = "http://localhost:8080/usuarios";
+    //     await fetch(url)
+    //     .then(promisse => promisse.json())
+    //     .then(data => data.map((usuario:string)=>(console.log(usuario))))
+    // }
     
     return (
         <section 
