@@ -6,12 +6,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   // Comentei o base abaixo pois na Discloud você roda na raiz do domínio.
   // Se deixar "/Kanary/", o site vai quebrar na Discloud.
-  // base: "/Kanary/", 
+  // base: "/Kanary/",
 
   plugins: [react(), tailwindcss()],
-  
+
   build: {
-    outDir: "docs", // Mantive sua config de saída
+    outDir: "dist", // Mantive sua config de saída
     rollupOptions: {
       output: {
         manualChunks: {
@@ -20,28 +20,22 @@ export default defineConfig({
       },
     },
   },
-  
+
   server: {
     port: 8080,
     host: "0.0.0.0",
     // AQUI ESTÁ A CORREÇÃO DO ERRO DA TELA PRETA:
-    allowedHosts: [
-      "kanaryfrontend.discloud.app",
-      "kanary.discloud.app"
-    ],
+    allowedHosts: ["kanaryfrontend.discloud.app", "kanary.discloud.app"],
     hmr: {
       overlay: false,
     },
   },
-  
+
   // Adicionei também no preview por precaução, caso seu comando de start use 'vite preview'
   preview: {
     port: 8080,
     host: "0.0.0.0",
-    allowedHosts: [
-      "kanaryfrontend.discloud.app",
-      "kanary.discloud.app"
-    ],
+    allowedHosts: ["kanaryfrontend.discloud.app", "kanary.discloud.app"],
   },
 
   assetsInclude: ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.svg"],
