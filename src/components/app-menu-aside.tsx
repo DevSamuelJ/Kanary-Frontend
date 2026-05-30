@@ -62,7 +62,7 @@ export const MenuAside = () => {
           className={isMenuOpen ? "pl-11" : "justify-center"}
           title="Log Out"
           aria-label="Log Out"
-          onClick={() => navigate("./login")}
+          onClick={() => navigate("/access/login")}
         />
       </div>
     </motion.aside>

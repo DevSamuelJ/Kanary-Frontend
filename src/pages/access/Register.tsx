@@ -30,8 +30,8 @@ export const Register = () => {
         if (formData.password === checkPass) {
 
             // Manipulando a API através do POST para cadastrar usuário
-            const url = "http://localhost:8080/usuarios";
-            await fetch(url, {
+        const url = "http://198.199.123.12:8080/usuarios";
+            const request = await fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -40,6 +40,8 @@ export const Register = () => {
             })
             setMessage("Logando...")
             console.log(formData)
+            const response = await request.json()
+            console.log("Response: ", response)
 
         } else {
 
@@ -105,7 +107,7 @@ export const Register = () => {
                 <CustomButton 
                     type="submit"
                     children="Cadastrar"
-                    onClick={ () => navigate("./") }
+                    onClick={ () => navigate("/access/login") }
                 />
             </form>
             <div className="flex">
