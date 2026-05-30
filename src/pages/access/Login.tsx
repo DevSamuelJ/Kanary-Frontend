@@ -15,8 +15,8 @@ export const Login = () => {
     // Função para botão LOGIN do formulário.
     const handleFormSubmit = async() => {
 
-        const url = "http://localhost:8080/usuarios/login";
-        await fetch(url, {
+        const url = "http://198.199.123.12:8080/usuarios/login";
+        const request = await fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -24,12 +24,10 @@ export const Login = () => {
             body: JSON.stringify(formData)
             })
 
-
-
-
-
+            const response =  await  request.json()
         console.log("Envie essas informações para o servidor.");
         console.log(formData);
+        console.log("Response ", response)
     };
     
     return (
@@ -74,7 +72,7 @@ export const Login = () => {
                 <CustomButton 
                     type="submit"
                     children="Login"
-                    onClick={ () => navigate("./app") }
+                    onClick={ () => navigate("/app") }
                 />
             </form>
             <div className="flex">
