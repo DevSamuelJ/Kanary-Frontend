@@ -15,7 +15,12 @@ export const Login = () => {
     // Função para botão LOGIN do formulário.
     const handleFormSubmit = async() => {
 
-        const url = "http://198.199.123.12:8080/usuarios/login";
+        // Evita que a página recarregue ao submeter o formulário
+        if (e && e.preventDefault) e.preventDefault();
+
+        const apiIp = import.meta.env.VITE_API_IP;
+        const url = `http://{apiIp}/usuarios/login`;
+
         const request = await fetch(url, {
             method: "POST",
             headers: {
@@ -72,7 +77,6 @@ export const Login = () => {
                 <CustomButton 
                     type="submit"
                     children="Login"
-                    onClick={ () => navigate("/app") }
                 />
             </form>
             <div className="flex">
