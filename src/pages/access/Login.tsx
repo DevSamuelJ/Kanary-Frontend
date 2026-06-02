@@ -12,10 +12,14 @@ export const Login = () => {
     // Hook para captar dados do formulário.
     const [formData, setFormData] = useState({ email: "", password: "" });
 
+    const [errorResponse, setErrorResponse] = useState("");
+
     // Função para botão LOGIN do formulário.
     const handleFormSubmit = async() => {
 
-        const url = "http://198.199.123.12:8080/usuarios/login";
+        const apiIp = import.meta.env.VITE_API_IP;
+        const url = `http://${apiIp}/usuarios/login`;
+
         const request = await fetch(url, {
             method: "POST",
             headers: {
@@ -24,7 +28,15 @@ export const Login = () => {
             body: JSON.stringify(formData)
             })
 
-            const response =  await  request.json()
+        const response =  await request.json()
+
+        if (!response.ok) {
+            const errorData = response;
+            console.log(errorData.message);
+            setErrorResponse(errorData.error);
+            console.log(errorData.error);
+        }
+
         console.log("Envie essas informações para o servidor.");
         console.log(formData);
         console.log("Response ", response)
@@ -63,12 +75,18 @@ export const Login = () => {
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     icon={<SlLock />}
                 />
-                <p 
-                    className="text-white text-xs font-extralight -mt-2  pb-2 self-end hover:underline hover:cursor-pointer"
-                    onClick={ () => navigate("../recover") }
-                >
-                    Esqueci minha senha
-                </p>
+                <div className="flex justify-between">
+                    <p className="text-red-500 text-xs font-medium -mt-2 pb-2">
+                        {errorResponse}
+                    </p>
+                    <p 
+                        className="text-white text-xs font-extralight -mt-2  pb-2 hover:underline hover:cursor-pointer"
+                        onClick={ () => navigate("../recover") }
+                    >
+                        Esqueci minha senha
+                    </p>
+                </div>
+                
                 <CustomButton 
                     type="submit"
                     children="Login"
