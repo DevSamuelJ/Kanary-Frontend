@@ -3,6 +3,7 @@ import { SlEnvolope, SlLock, SlUser } from "react-icons/sl";
 import { useNavigate } from "react-router";
 import { CustomInputBox } from "../../components/ui/custom-input-box";
 import { CustomButton } from "../../components/ui/custom-btn";
+import logoWhite from "../../assets/img/logo-white.png";
 
 export const Register = () => {
 
@@ -65,7 +66,7 @@ export const Register = () => {
             id="registerContainer"
             className="w-95 md:w-135 h-135 bg-linear-to-t from-[#1A4C84]/50 via-[#2C82BD]/50 to-[#00102B]/50 backdrop-blur-sm rounded-[3rem] ring-1 ring-white/40 flex flex-col justify-center items-center px-5"
         >
-            <img src="/src/assets/img/logo-white.png" alt="" className="w-50" />
+            <img src={logoWhite} alt="" className="w-50" />
             <h1 className="font-bold p-4 text-2xl text-white">
                 Cadastre seu usuário
             </h1>
