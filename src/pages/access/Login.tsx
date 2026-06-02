@@ -19,7 +19,7 @@ export const Login = () => {
     const handleFormSubmit = async() => {
 
         const apiIp = import.meta.env.VITE_API_IP;
-        const url = `http://${apiIp}/usuarios/login`;
+        const url = `https://${apiIp}/usuarios/login`;
 
         const request = await fetch(url, {
             method: "POST",

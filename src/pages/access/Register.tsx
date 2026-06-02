@@ -32,7 +32,7 @@ export const Register = () => {
 
             // Manipulando a API através do POST para cadastrar usuário
             const apiIp = import.meta.env.VITE_API_IP;
-            const url = `http://${apiIp}/usuarios`;
+            const url = `https://${apiIp}/usuarios`;
 
             const request = await fetch(url, {
             method: "POST",
