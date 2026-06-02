@@ -31,7 +31,9 @@ export const Register = () => {
         if (formData.password === checkPass) {
 
             // Manipulando a API através do POST para cadastrar usuário
-        const url = "http://198.199.123.12:8080/usuarios";
+            const apiIp = import.meta.env.VITE_API_IP;
+            const url = `http://${apiIp}/usuarios`;
+
             const request = await fetch(url, {
             method: "POST",
             headers: {

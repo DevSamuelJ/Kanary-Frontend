@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router"
+import logoWhite from "../../../assets/img/logo-white.png";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -6,7 +7,7 @@ export const Header = () => {
   return(
     <header>
       <nav className="flex justify-between items-center bg-slate-900/50 rounded-4xl px-6 py-3 text-white">
-        <img src="src/assets/img/logo-white.png" alt="logoKanary" width={120} />
+        <img src={logoWhite} alt="logoKanary" width={120} />
 
         <div className="flex gap-6 items-center">
           <a
